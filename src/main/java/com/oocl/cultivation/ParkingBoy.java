@@ -10,16 +10,24 @@ public class ParkingBoy {
     }
 
     public ParkingTicket park(Car car) {
-        // TODO: Please implement the method
-        throw new RuntimeException("Not implemented");
+        return parkingLot.addCar(car);
     }
 
     public Car fetch(ParkingTicket ticket) {
-        // TODO: Please implement the method
-        throw new RuntimeException("Not implemented");
+        return parkingLot.getCar(ticket);
     }
 
     public String getLastErrorMessage() {
         return lastErrorMessage;
+    }
+
+    public String IsValidTicket(ParkingTicket parkingTicket, ParkingLot parkingLot) {
+        if(parkingTicket == null){
+            return lastErrorMessage = "Please provide your parking ticket.";
+        }
+        if(parkingLot.IsValidTicket(parkingTicket) == null) {
+            return lastErrorMessage = "Unrecognized parking ticket.";
+        }
+        return "";
     }
 }
